@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+.font-serif-editorial {
+  font-family: 'Instrument Serif', Georgia, Cambria, "Times New Roman", serif;
+}
+
+.font-mono-data {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom scrollbars and styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Print-friendly view for articles */
+@media print {
+  @page {
+    margin: 1.5cm 1.5cm;
+    size: auto;
+  }
+
+  /* Reset document for clean paper print */
+  html, body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 11pt !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Hide main site layout when printing article */
+  body > #root > div > header,
+  body > #root > div > footer,
+  body > #root > div > div.flex-1,
+  header,
+  footer,
+  nav,
+  aside,
+  .no-print,
+  .print-hidden,
+  [role="progressbar"] {
+    display: none !important;
+  }
+
+  /* Unfold modal container into clean printable page */
+  .article-modal-backdrop {
+    position: static !important;
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    display: block !important;
+    z-index: auto !important;
+  }
+
+  .article-modal-container {
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+  }
+
+  .article-modal-content {
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    height: auto !important;
+  }
+
+  /* Force faithful print color reproduction */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Typography and page-break optimization */
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+    break-after: avoid;
+    color: #000000 !important;
+  }
+
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    border-radius: 4px !important;
+  }
+
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .print-page-break-avoid {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+}
+

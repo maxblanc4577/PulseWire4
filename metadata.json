@@ -1,0 +1,6 @@
+{
+  "name": "Pulsewire - Global Development & Intelligence",
+  "description": "Independent global development intelligence, climate resilience tracking, field dispatches, and human vitality metrics across 164 national territories worldwide.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
